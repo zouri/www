@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hi, is me 🎉</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/vue.js"></script>
+
+    <script src="js/calendar.js"></script>
+    <script src="js/shi.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+    <div class="container-fluid">
+        
+        <div class="">
+            <div class="row" id="shi">
+                <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1">
+                    
+                    <div>
+                        <div id="to_day">2018-10-12 今天呢</div>
+                    </div>
+
+                    <div>
+                        <div id="content" class="col-lg-9">
+                            <span v-html="content"></span>
+                        </div>
+                        <div id="author" class="col-lg-1">
+                            <span>{{ author }}</span>
+                        </div>
+                        <div id="title" class="col-lg-2">
+                            <span>{{ title }}</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            // 农历日期
+            function to_day(){
+                let t = new Date();
+                let tt = calendar.solar2lunar(t.getFullYear(), t.getMonth() + 1, t.getDate());
+                $('#to_day').html(tt.gzYear + tt.IMonthCn + tt.IDayCn);
+                // return tt.gzYear + tt.IMonthCn + tt.IDayCn;
+            };
+            to_day()
+            
+            $('#to_day').html()
+            // 页面渲染
+            let shi = ShiDict[Math.floor(Math.random()*(0-27)+27)];
+            var shi_app = new Vue({
+                el: '#shi',
+                data: {
+                    title: shi['title'],
+                    author: shi['author'],
+                    content: shi['content'].replace(/\n/g,'<br>')
+                }
+            })
+        </script>
+    </div>
+
+</body>
+</html> 
