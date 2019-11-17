@@ -4,14 +4,18 @@ body{
     background: white url(../images/bg.png);
 }
 
-.to_day{
-    padding-top: 10px;
-    font-size: 2em;
+#app {
+    font-family: STKaiti, KaiTi, PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif;
 }
 
+.to_day{
+    padding: 5px;
+    text-align: right;
+    font-size: 1.3em;
+
+}
 .dtp{
     writing-mode: vertical-rl;
-    font-family: STKaiti, KaiTi, PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif;
 }
 
 .shi_title{
@@ -28,11 +32,35 @@ body{
     background-position: 200 320;
     opacity: 0.9;
     padding: 1em .5em;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 .shi_content{
-    /* text-align: right; */
+    padding-top: .7em;
+    font-size: 1.5em;
+    line-height: 1.8em;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.shi_title_mobile{
+    font-size: 2em;
+    font-weight: 310;
+    text-align: center;
+}
+
+.shi_author_mobile{
+    padding-top: 0.5em;
+    /* background: white url(./images/yz.png) no-repeat bottom; */
+    background-size: 250%;
+    border-radius: 50%;
+    background-position: 200 320;
+    opacity: 0.9;
+    padding: 1em .5em;
+    font-size: 1.2em;
+}
+
+.shi_content_mobile{
     padding-top: .7em;
     font-size: 1.5em;
     line-height: 1.8em;

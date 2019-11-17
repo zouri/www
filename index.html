@@ -12,6 +12,7 @@
         
     <!-- 引入样式 -->
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.12.0/lib/theme-chalk/display.css">
     <!-- 引入组件库 -->
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 
@@ -23,17 +24,29 @@
 <div id="app">
     <el-row>
         <el-col :span="24">
-            <div class="to_day">{{ lunar_calendar }}</div>
+            <div class="to_day">农历{{ lunar_calendar }}</div>
         </el-col>
     </el-row>
-    <el-row class="shi">
-        <el-col :span="12" class="shi_content dtp" v-html="shi_content">
+    <!-- Pc -->
+    <el-row class="shi hidden-sm-and-down">
+        <el-col class="shi_content dtp" v-html="shi_content" :span="12">
         </el-col>
-        <el-col :span="1" class="shi_author dtp" >
+        <el-col class="shi_author dtp" :span="1">
             {{ shi_author }}
         </el-col>
-        <el-col :span="1" class="shi_title dtp">
+        <el-col class="shi_title dtp" :span="1">
             {{ shi_title }}
+        </el-col>
+    </el-row>
+    <!-- mobile -->
+    <el-row class="shi hidden-md-and-up" style="text-align: center;">
+        <el-col class="shi_title_mobile" :span="24">
+            {{ shi_title }}
+        </el-col>
+        <el-col class="shi_author_mobile" :span="24">
+            {{ shi_author }}
+        </el-col>
+        <el-col class="shi_content_mobile" v-html="shi_content" :span="24">
         </el-col>
     </el-row>
 </div>
