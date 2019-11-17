@@ -1,25 +1,26 @@
+*{margin: 0;padding: 0;}
+.clear{clear:both; height: 0; line-height: 0; font-size: 0}
 body{
     background: white url(../images/bg.png);
 }
 
-#to_day{
+.to_day{
     padding-top: 10px;
     font-size: 2em;
 }
 
-#shi span{
+.dtp{
     writing-mode: vertical-rl;
-    writing-mode: tb-lr;
     font-family: STKaiti, KaiTi, PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif;
 }
 
-#title span{
+.shi_title{
     font-size: 2.5em;
     font-weight: 310;
     text-align: center;
 }
 
-#author span{
+.shi_author{
     padding-top: 0.9em;
     /* background: white url(./images/yz.png) no-repeat bottom; */
     background-size: 350%;
@@ -30,11 +31,12 @@ body{
     font-size: 1.5em;
 }
 
-#content{
+.shi_content{
+    /* text-align: right; */
     padding-top: .7em;
     font-size: 1.5em;
     line-height: 1.8em;
-    letter-spacing: 5px;
+    letter-spacing: 1px;
     font-weight: 300;
 }
 
